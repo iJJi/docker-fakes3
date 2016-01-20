@@ -1,11 +1,10 @@
 sudo: required
-
 language: ruby
-
 services:
-  - docker
-
+- docker
 script:
-  - docker build -t fingershock/fakes3 .
-  - docker run --rm fingershock/fakes3 fakes3 --help
-
+- docker build -t fingershock/fakes3 .
+- docker run --rm fingershock/fakes3 fakes3 --help
+notifications:
+  slack:
+    secure: mijzQU7xtvhaEP6LJf/FqRI63JdALUWqDg8Q/duPaGixOC+qdMmXYubdHroYIOwqj5HeWnxTPvyOYyUtBPCiToHzdIlPioq0sUXYduJNyMGHB7CiS7Lmtii7uJjZYauom7DTCXnP3pWSsseLJY5U/eXtuk+NdyUwJ4l570+tlmwxPV1vGYv547cyLxqjiSwixpLhT/NN7WaVIcx/9XcInVpCJvoNzeLMos3aRtGCJTV1vjzKA/s3jY++Jvw2aF9SdM3t+8EaHwoAZ0xj9yufsGQCnabmIxajtEh/5e7X2T9OkfTTZOxBlDJBdQuRUt+lb0Rtrry2zFldmUDza0ohmrO3rWrjRnu4J3sLLanoyJsF4DmsBHyPp8jd/TjtYAiU907e/mUtpAJFJL0p4fPztKAq6A9HYCE9dEDxu5oQRbx0JyuvARdawORVfK1csl7UEksumXeALRxL+szRFcDqnIGjKwpDYWJ9wP6bq/ff+/59hF+XREBDEeQNQFKUFptEPa3QkAY4rsrlvPYoEf0/+L5rgR4hyVtN8PbKxhlqjffWU7N2PJD0ruD/rRznQSmHdjbnHzqbRviRxW4oLiG48Sf5bNfg5kzdZBlPIWQcdZUuwkQQARR3LuqaSadQPf8rgM9q+1zEQemJanGyOIZ8jQfRi0ifCvBMdm4OmF8oy9o=
