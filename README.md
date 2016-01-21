@@ -7,7 +7,8 @@ It's on [docker-hub](https://hub.docker.com/r/fingershock/fakes3/) and [github](
 
 ## tags and links
 
- * latest, v0.2.3 [(Dockerfile)](https://github.com/iJJi/docker-fakes3/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/fakes3:latest.svg)](https://imagelayers.io/?images=fingershock/fakes3:latest)
+ * `latest` [(Dockerfile)](https://github.com/iJJi/docker-fakes3/blob/master/Dockerfile) [![](https://badge.imagelayers.io/fingershock/fakes3:latest.svg)](https://imagelayers.io/?images=fingershock/fakes3:latest) [![Build Status](https://travis-ci.org/iJJi/docker-fakes3.svg?branch=master)](https://travis-ci.org/iJJi/docker-fakes3)
+ * `0.2.3` [(Dockerfile)](https://github.com/iJJi/docker-fakes3/blob/0.2.3/Dockerfile) [![](https://badge.imagelayers.io/fingershock/fakes3:0.2.3.svg)](https://imagelayers.io/?images=fingershock/fakes3:0.2.3) [![Build Status](https://travis-ci.org/iJJi/docker-fakes3.svg?branch=0.2.3)](https://travis-ci.org/iJJi/docker-fakes3)
 
 ## running
 
