@@ -5,7 +5,7 @@ services:
 before_install:
 - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 script:
-- docker build -t fingershock/fakes3:${TRAVIS_BRANCH/master/latest}
+- docker build -t fingershock/fakes3:${TRAVIS_BRANCH/master/latest} .
 - docker run --rm fingershock/fakes3:${TRAVIS_BRANCH/master/latest} fakes3 --help
 after_success:
 - docker push     fingershock/fakes3:${TRAVIS_BRANCH/master/latest}
