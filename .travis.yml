@@ -3,15 +3,22 @@ language: bash
 
 services:
   - docker
+
 before_install:
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
+before_script:
+  - repo=fingershock/fakes3
+
 script:
-  - docker build -t fingershock/fakes3:${TRAVIS_BRANCH/master/latest} .
-  - docker run --rm fingershock/fakes3:${TRAVIS_BRANCH/master/latest} fakes3 --help
+  - docker build -t $repo .
+  - docker run --rm $repo fakes3 --help
 
 after_success:
-  - docker push     fingershock/fakes3:${TRAVIS_BRANCH/master/latest}
+  - tag=$(docker run --rm $repo /bin/sh -c 'echo $FAKES3_VERSION')
+  - docker tag $repo $repo:$tag
+  - docker push $repo:latest
+  - docker push $repo:$tag
 
 notifications:
   slack:
