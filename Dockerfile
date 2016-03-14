@@ -1,6 +1,6 @@
 FROM alpine:3.3
 MAINTAINER Bryan Talbot <bryan.talbot@ijji.com>
-ENV FAKES3_VERSION=0.2.3
+ENV FAKES3_VERSION=0.2.4
 WORKDIR /fakes3_data
 VOLUME ["/fakes3_data"]
 EXPOSE 8000
