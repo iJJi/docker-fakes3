@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER Bryan Talbot <bryan.talbot@ijji.com>
 ENV FAKES3_VERSION=0.2.4
 WORKDIR /fakes3_data
