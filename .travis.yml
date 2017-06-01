@@ -8,13 +8,15 @@ services:
   - docker
 
 before_install:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 before_script:
   - repo=fingershock/fakes3
+  - builddate=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+  - buildrev=$(git rev-parse --short HEAD)
 
 script:
-  - docker build -t $repo .
+  - docker build --build-arg VCS_REF=$buildrev --build-arg BUILD_DATE=$builddate -t $repo .
   - docker run --rm $repo fakes3 --help
 
 after_success:
