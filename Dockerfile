@@ -18,7 +18,7 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/iJJi/docker-ruby" \
       org.label-schema.vendor="Ijji, inc."
 
-RUN apk add --no-cache ruby ruby-io-console
+RUN apk add --no-cache ruby ruby-io-console ruby-webrick ruby-etc
 RUN gem install fakes3 -v $FAKES3_VERSION --no-doc
 
 # to run with a non-root user, we need to manually create the workdir with the needed ownership
